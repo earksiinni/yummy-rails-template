@@ -1,0 +1,20 @@
+development:
+  adapter: postgresql
+  database: <%= @app_name.underscore %>_development
+  username: <%= @app_name.underscore %>
+  host: localhost
+  port: 5432
+
+test: &test
+  adapter: postgresql
+  database: <%= @app_name.underscore %>_test
+  host: localhost
+  port: 5432
+
+production:
+  adapter: postgresql
+  encoding: utf8
+  database: <%= @app_name.underscore %>_production
+  pool: 5
+  username: <%= @app_name.underscore %>
+  password:
