@@ -205,7 +205,7 @@ inside 'app' do
       remove_file 'application.html.erb'
       template_view_file "application"
     end
-    inside 'views' do
+    inside 'shared' do
       copy_view_file "_alert_danger"
       copy_view_file "_alert_info"
       copy_view_file "_alert_success"
