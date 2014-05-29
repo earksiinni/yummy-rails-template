@@ -241,6 +241,12 @@ if @opts[:authentication] == :devise
   run 'bundle exec rails g devise:views'
   gsub_file last_modified_file("db/migrate"), /^# t/, 't'  # Enable all options in user model
   gsub_file last_modified_file("db/migrate"), /^# add_index/, 'add_index'
+  inside 'config' do
+    inside 'initializers' do
+      copy_file 'devise.rb'
+    end
+  end
+  route 'devise_for :user'
 end
 
 # Foundation
