@@ -12,9 +12,6 @@
  *
  *= require_tree .
  *= require_self
-<% if @opts[:cssjs] == :html5 %>
- *= require normalize-rails
-<% end %>
 <% if @opts[:text_editor] == :redactor %>
  *= require redactor-rails
 <% end %>

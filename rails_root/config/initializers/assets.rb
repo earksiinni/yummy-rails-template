@@ -1,0 +1,1 @@
+<% if @opts[:cssjs] == :html5 %>Rails.application.config.assets.precompile += %w( normalize.css )<% end %>

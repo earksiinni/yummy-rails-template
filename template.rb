@@ -327,6 +327,20 @@ if @opts[:text_editor] == :redactor
   end
 end
 
+# Normalize.css
+if @opts[:cssjs] == :html5
+  inside 'config' do
+    inside 'initializers' do
+      template 'assets.rb'
+    end
+  end
+  inside 'app' do
+    inside 'assets' do
+      copy_file 'normalize.scss'
+    end
+  end
+end
+
 # Migrations
 rake 'db:migrate'
 
