@@ -126,6 +126,7 @@ gem 'slim' if @opts[:template_engine] == :slim
 gem 'haml' if @opts[:template_engine] == :haml
 gem 'redcarpet'
 gem 'foundation-rails' if @opts[:cssjs] == :foundation
+gem 'bootstrap-sass' if @opts[:cssjs] == :bootstrap
 gem 'modernizr-rails' if @opts[:cssjs] != :foundation  # Already included with Foundation
 gem 'normalize-rails' if @opts[:cssjs] == :html5
 gem 'devise' if @opts[:authentication] == :devise
@@ -289,6 +290,9 @@ run 'bundle exec guard init rspec'
 run 'bundle exec guard init cucumber'
 gsub_file 'Guardfile', /^guard :rspec do$/, "guard :rspec, cmd: 'spring rspec --color' do"
 gsub_file 'Guardfile', /^guard 'cucumber' do$/, "guard 'cucumber', cmd: 'spring cucumber -c' do"
+inside 'spec' do
+  gsub_file 'spec_helper.rb' /use_transactional_fixtures = true/, "use_transactional_fixtures = false"
+end
 
 # Refinery
 run 'bundle exec rails g refinery:cms --fresh-installation' if @opts[:cms] == :refinery

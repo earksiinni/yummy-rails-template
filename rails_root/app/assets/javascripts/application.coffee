@@ -13,7 +13,7 @@
 #= require jquery
 #= require jquery_ujs
 <% if @opts[:cssjs] == :foundation %>#= require foundation
-<% elsif @opts[:cssjs] == :bootstrap %>#= require twitter/bootstrap
+<% elsif @opts[:cssjs] == :bootstrap %>#= require bootstrap
 <% end %>
 <% if @opts[:text_editor] == :redactor %>#= require redactor-rails
 <% end %>

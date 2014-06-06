@@ -19,3 +19,6 @@
 <% if @opts[:cssjs] == :foundation %>
 @import 'foundation_and_overrides';
 <% end %>
+<% if @opts[:cssjs] == :foundation %>
+@import 'bootstrap';
+<% end %>
