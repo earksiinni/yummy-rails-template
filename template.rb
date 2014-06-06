@@ -140,11 +140,11 @@ end
 
 gem_group :development, :test do
   gem 'rspec-rails'
+  gem 'pry'
 end
 
 gem_group :development do
   gem 'better_errors'
-  gem 'pry'
   gem 'guard-rails'
   gem 'guard-rspec'
   gem 'guard-cucumber'
