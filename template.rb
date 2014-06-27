@@ -165,7 +165,7 @@ gem_group :production do
   gem 'rails_12factor'
 end
 
-insert_into_file 'Gemfile', "\nruby '2.1.1'", after: "source 'https://rubygems.org'\n"
+#insert_into_file 'Gemfile', "\nruby '2.1.1'", after: "source 'https://rubygems.org'\n"
 
 # Delete unnecessary gems
 gsub_file "Gemfile", /^gem\s+["']sqlite3["'].*$/, ''
@@ -291,7 +291,7 @@ run 'bundle exec guard init cucumber'
 gsub_file 'Guardfile', /^guard :rspec do$/, "guard :rspec, cmd: 'spring rspec --color' do"
 gsub_file 'Guardfile', /^guard 'cucumber' do$/, "guard 'cucumber', cmd: 'spring cucumber -c' do"
 inside 'spec' do
-  gsub_file 'spec_helper.rb' /use_transactional_fixtures = true/, "use_transactional_fixtures = false"
+  gsub_file 'spec_helper.rb', /use_transactional_fixtures = true/, "use_transactional_fixtures = false"
 end
 
 # Refinery
