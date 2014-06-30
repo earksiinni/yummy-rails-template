@@ -1,2 +1,3 @@
-- flash.to_hash.slice(:warning, :error, :alert).values.each do |value|
-  .alert.alert-warning= value
+<% flash.to_hash.slice(:warning, :error, :alert).values.each do |value| %>
+  <div class="alert alert-warning"><%= value %></div>
+<% end %>
