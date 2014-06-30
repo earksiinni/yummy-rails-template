@@ -284,6 +284,7 @@ end
 
 # RSpec and Cucumber
 run 'bundle exec rails g rspec:install'
+gsub_file '.rspec', /^--warnings$/, ''
 run 'bundle exec rails g cucumber:install'
 run 'bundle exec guard init rails'
 run 'bundle exec guard init rspec'
